@@ -63,4 +63,10 @@ public class FirstTest {
         );
 
     }
+
+    private WebElement waitForElementPresentByXPath(String xpath, String error_message)
+    {
+        return waitForElementPresentByXPath(xpath, error_message, 5);
+    }
+
 }
