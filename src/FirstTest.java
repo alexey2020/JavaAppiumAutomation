@@ -50,7 +50,12 @@ public class FirstTest {
                 5
         );
 
-        element_to_enter_search_line.sendKeys("Appium");
+        element_to_enter_search_line.sendKeys("Java");
+        waitForElementPresentByXPath(
+                "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']",
+                "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
+                15
+        );
     }
 
     private WebElement waitForElementPresentByXPath(String xpath, String error_message, long timeoutInSeconds)
@@ -61,7 +66,6 @@ public class FirstTest {
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(by)
         );
-
     }
 
     private WebElement waitForElementPresentByXPath(String xpath, String error_message)
